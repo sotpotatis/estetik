@@ -1,7 +1,7 @@
 '''util.py
 Various utilities related to the discord bot.'''
 from discord import Embed
-from automation.discord_bot.bot_const import EMBED_COLOR_ERROR
+from bot_const import EMBED_COLOR_ERROR
 import logging
 logger = logging.getLogger(__name__)
 

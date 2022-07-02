@@ -1,7 +1,7 @@
 import logging
 from discord import Embed
 from discord.ext import commands
-from automation.discord_bot.bot_const import EMBED_COLOR
+from bot_const import EMBED_COLOR
 logger = logging.getLogger(__name__)
 
 class OtherCommands(commands.Cog):

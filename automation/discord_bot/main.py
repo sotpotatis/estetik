@@ -1,7 +1,7 @@
 from discord.ext import commands
 from other_commands import OtherCommands
-from automation.discord_bot.basic_commands import BasicCommands
-from automation.discord_bot.error_handling import ErrorHandlingCog
+from basic_commands import BasicCommands
+from error_handling import ErrorHandlingCog
 from automation.python_api_client.api_client import *
 
 #Logging
