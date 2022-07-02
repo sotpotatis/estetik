@@ -17,7 +17,7 @@ const {update_structure_for} = require("./data");
 const {json} = require("express");
 
 // Constants
-const SERVER_PORT = parseInt(process.env.SERVER_PORT, 10)
+const SERVER_PORT = parseInt(process.env.ESTETIK_SERVER_PORT, 10)
 const SERVER_BASE_URL = process.env.ESTETIK_SERVER_BASE_URL // Base URL that the server is accessible at
 const ALLOWED_UPLOAD_FILE_EXTENSIONS = [".jpg", ".png"]
 
