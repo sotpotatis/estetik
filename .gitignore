@@ -2,5 +2,6 @@ api/content/images/*
 api/content/sounds/*
 api/content/text/*
 api/authorized_tokens.json
+app/.netlify/*
 # Project exclude paths
 /api/node_modules/

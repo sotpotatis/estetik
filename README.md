@@ -64,6 +64,11 @@ The API is mostly plug-and-play. Just edit the `authorized_tokens.json.example` 
 you want to be able to remotely manage assets. Also rename it to `authorized_tokens.json`.
 You can run the API using the command `node app.js'` or `npm run server`.
 
+#### Linux quickstart
+
+To run a Linux server with the API on it, simply clone the repository in the `/srv` folder,
+`chmod +x run_app.sh` and then install `estetik_api.service` via `systemd`. Voilà!
+
 ### Installing the static website
 
 I have tested the static website with Netlify (run `npm run build` to create output files).
