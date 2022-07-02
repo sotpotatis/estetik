@@ -1,0 +1,6 @@
+[Unit]
+Description=Runs the Estetik Discord Bot.
+[Service]
+ExecStart=/srv/estetik/automation/discord_bot/run_discord_bot.sh
+[Install]
+RequiredBy=multi-user.target

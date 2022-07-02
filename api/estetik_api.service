@@ -1,0 +1,6 @@
+[Unit]
+Description=Runs the Estetik API.
+[Service]
+ExecStart=/srv/estetik/api/run_app.sh
+[Install]
+RequiredBy=multi-user.target

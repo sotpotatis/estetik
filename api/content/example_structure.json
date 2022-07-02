@@ -1,0 +1,44 @@
+{
+	"parts": [
+		{
+			"title": "This is a part",
+			"description": "A part contains segments, which are individual media. See below for documentation of all available segments.",
+			"id": "must-be-unique-for-optimal-function",
+			"segments": [
+            {
+			"segment_type": "media",
+			"media_url": "/api/content/images/image_name.jpg",
+			"text": [{
+				"font": "serif-modified",
+				"value": "This is an image",
+				"size": "4xl"
+			}, {
+				"font": "serif-modified",
+				"value": "The \"media\" type will render content using the HTML <img> tag.",
+				"size": "2xl"
+			}]
+		},
+			{
+				"segment_type": "text",
+				"text": [{
+					"font": "serif-modified",
+					"value": "Custom text field",
+					"size": "5xl"
+				}, {
+					"font": "serif-modified",
+					"value": "Here, you can put text! And below is an empty field."
+				}]
+			},
+            {
+				"segment_type": "empty"
+			},
+              {
+                "segment_type": "button",
+                "text": "This is the buttons text",
+			  	"url": "https://example.com",
+				  "color": "blue-400",
+				  "text_color": "white",
+				  "text_font": "serif-modified"
+              }
+            ]}]
+}

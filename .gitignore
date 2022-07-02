@@ -1,0 +1,6 @@
+api/content/images/*
+api/content/sounds/*
+api/content/text/*
+api/authorized_tokens.json
+# Project exclude paths
+/api/node_modules/
