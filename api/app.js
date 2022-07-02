@@ -12,6 +12,7 @@ const body_parser = require("body-parser") // body-parser - for parsing JSON bod
 const api_responses = require("./api_responses")
 const fs = require("fs") // fs - for reading file storage
 const path = require("path")
+const helmet = require("helmet") // Helmet - for safety measures
 const {generate_api_error, generate_api_response} = require("./api_responses");
 const {update_structure_for} = require("./data");
 const {json} = require("express");
@@ -30,6 +31,7 @@ const app = express() // create an handler for the app
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(body_parser.json())
+app.use(helmet())
 // Specify use of CORS
 app.use(cors())
 app.get("/", (req, res) => {
