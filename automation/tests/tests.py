@@ -1,7 +1,7 @@
 '''tests.py
 Some tests.'''
 import json, os, random, logging
-from automation.python_api_client.api_client import Client
+from api_client import Client
 AUTH_TOKENS = json.loads(open(os.path.join(os.path.dirname(os.getcwd()), "api/authorized_tokens.json"), "r").read())
 AUTH_TOKEN = random.choice(AUTH_TOKENS["tokens"])
 client = Client(AUTH_TOKEN, api_domain="localhost:5000", use_https=False)

@@ -2,7 +2,8 @@ from discord.ext import commands
 from other_commands import OtherCommands
 from basic_commands import BasicCommands
 from error_handling import ErrorHandlingCog
-from automation.python_api_client.api_client import *
+from api_client import *
+import logging, os
 
 #Logging
 logger = logging.getLogger(__name__)

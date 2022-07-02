@@ -7,7 +7,7 @@ from discord import Embed, Color
 from bot_const import EMBED_COLOR
 from pathlib import Path
 from tempfile import mkstemp
-from automation.python_api_client.api_client import Client
+from api_client import Client
 from util import generate_error_embed
 
 IMAGE_FILE_EXTENSIONS = [".png", ".jpg", ".gif"]
