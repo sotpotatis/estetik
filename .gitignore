@@ -5,3 +5,4 @@ api/authorized_tokens.json
 app/.netlify/*
 # Project exclude paths
 /api/node_modules/
+app/lib/APIRoutes.js

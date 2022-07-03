@@ -1,13 +1,14 @@
 <script>
     import {page} from "$app/stores"
-    import {onMount, SvelteComponent} from "svelte";
+    import {onMount} from "svelte";
     import LoadingSpinner from "$lib/LoadingSpinner.svelte";
     import Icon from '@iconify/svelte'
     import Text from '$lib/Text.svelte';
     import Button from '$lib/Button.svelte'
+    import { API_STRUCTURE_BASE_URL } from '../../lib/APIRoutes.js'
     let media_type = $page.params.media_type
     console.log(`Requested media type: ${media_type}`)
-    let api_url = "http://127.0.0.1:5000/api/structure/" + encodeURIComponent(media_type)
+    let api_url = API_STRUCTURE_BASE_URL + encodeURIComponent(media_type)
     let structure;
     let covering_image; // The image that is used to examine other images
     let covering_image_container;

@@ -71,7 +71,9 @@ To run a Linux server with the API on it, simply clone the repository in the `/s
 
 ### Installing the static website
 
-I have tested the static website with Netlify (run `npm run build` to create output files).
+I have tested the static website with Netlify. Before building,
+fill out `lib/APIRoutes.js.example` in the app folder  and rename it to `lib/APIRoutes.js`.
+Run `npm run build` to create output files.
 You can simply change the adapter used in `svelte.config.js` to any adapter to deploy it elsewhere.
 
 ### Installing the Python API Client

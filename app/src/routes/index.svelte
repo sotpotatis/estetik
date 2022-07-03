@@ -1,9 +1,10 @@
 <script>
     import { onMount } from "svelte";
     import LoadingSpinner  from "$lib/LoadingSpinner.svelte";
+    import { API_MEDIA_LIST_URL }  from '../lib/APIRoutes.js'
     let media_types;
     onMount(async () => {
-        await fetch("http://127.0.0.1:5000/api/available_media_types")
+        await fetch(API_MEDIA_LIST_URL)
             .then(response => response.json())
             .then(data => {
                 console.log("API data: " + JSON.stringify(data))
