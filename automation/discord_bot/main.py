@@ -3,7 +3,7 @@ import sys
 from argparse import ArgumentParser
 import pathlib
 parser = ArgumentParser(description="Runs a Discord management bot for the Estetik API.")
-parser.add_argument("api_client_path", type=pathlib.Path)
+parser.add_argument("--api_client_path", type=pathlib.Path, required=True, help="Path to the Python API client for the Estetik API.")
 passed_args = parser.parse_args()
 api_client_path = passed_args.api_client_path
 print(f"Loading API client from {api_client_path}...")
