@@ -7,8 +7,8 @@ parser.add_argument("api_client_path", type=pathlib.Path)
 passed_args = parser.parse_args()
 api_client_path = passed_args.api_client_path
 print(f"Loading API client from {api_client_path}...")
-from api_client import *
 sys.path.append(str(api_client_path))
+from api_client import *
 from discord.ext import commands
 from other_commands import OtherCommands
 from basic_commands import BasicCommands
