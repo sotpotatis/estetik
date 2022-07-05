@@ -60,6 +60,9 @@ ___
 
 ### Installing the API
 
+> **ℹ Note:** The API is located inside the `api/` folder.
+
+
 The API is mostly plug-and-play. Just edit the `authorized_tokens.json.example` file and add some API tokens if
 you want to be able to remotely manage assets. Also rename it to `authorized_tokens.json`.
 You can run the API using the command `node app.js'` or `npm run server`.
@@ -71,16 +74,28 @@ To run a Linux server with the API on it, simply clone the repository in the `/s
 
 ### Installing the static website
 
+> **ℹ Note:** The static website is located inside the `app/` folder.
+
+*Personal build status:*
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/854ee901-e87b-476f-9384-6e36a62b1b4b/deploy-status)](https://app.netlify.com/sites/animated-stardust-94cb77/deploys)
+
 I have tested the static website with Netlify. Before building,
-fill out `lib/APIRoutes.js.example` in the app folder  and rename it to `lib/APIRoutes.js`.
+fill out `lib/APIRoutes.js` and change it to connect to the API endpoint that you're using.
+Also see `lib/APIRoutes.js.example` for an example file
 Run `npm run build` to create output files.
 You can simply change the adapter used in `svelte.config.js` to any adapter to deploy it elsewhere.
 
 ### Installing the Python API Client
 
+> **ℹ Note:** The Python API Client is located inside the `automation/python_api_client` folder.
+
 The API client is not available on PyPi, but you can still copy the files for the client and use it however you like.
 Documentation can be found in its directory (see `automation/python_api_client`)
+
 ### Installing the Discord Bot
+
+> **ℹ Note:** The Discord Bot is located inside the `automation/discord_bot` folder.
 
 * Make sure the Python API Client is accessible as a package
 * Set the following environment variables:

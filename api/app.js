@@ -17,6 +17,17 @@ const {generate_api_error, generate_api_response} = require("./api_responses");
 const {update_structure_for} = require("./data");
 const {json} = require("express");
 
+let use_https = false
+let https = null // https library
+let ssl_options = {}
+if (process.env.ESTETIK_SERVER_SSL === "true"){
+    console.log("Loading SSL certificates...")
+    https = require("https")
+    ssl_options.key = fs.readFileSync(process.env.ESTETIK_SERVER_SSL_KEY_PATH)
+    ssl_options.cert = fs.readFileSync(process.env.ESTETIK_SERVER_SSL_CERT_PATH)
+    use_https = true
+}
+
 // Constants
 const SERVER_PORT = parseInt(process.env.ESTETIK_SERVER_PORT, 10)
 const SERVER_BASE_URL = process.env.ESTETIK_SERVER_BASE_URL // Base URL that the server is accessible at
@@ -285,3 +296,11 @@ app.post("/api/:media_type/parts/add", (req, res) => {
 app.listen(SERVER_PORT, () => {
     console.log(`The app has started and is listening on port ${SERVER_PORT}.`)
 })
+
+if (use_https){
+    const https_server = https.createServer(ssl_options, app)
+    let SSL_PORT = parseInt(process.env.ESTETIK_SERVER_SSL_PORT, 10)
+    https_server.listen(SSL_PORT, () => {
+        console.log(`The app (SSL) has started and is listening on port ${SSL_PORT}`)
+    })
+}
