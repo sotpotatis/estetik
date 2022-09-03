@@ -45,6 +45,11 @@ app.use(body_parser.json())
 app.use(helmet())
 // Specify use of CORS
 app.use(cors())
+// Specify CORP policy so other websites can embed images
+app.use((req, res,next)=>{
+    res.setHeader("Cross-Origin-Resource-Policy", "cross-origin")
+})
+// Define routes
 app.get("/", (req, res) => {
     console.log("Got a request to the index!")
     return res.sendStatus(419)
@@ -278,7 +283,7 @@ app.post("/api/:media_type/parts/add", (req, res) => {
             }
         })
         if (previous_ids.includes(json_body.id)){
-            console.log("Error! ID is not unique. Returing error...")
+            console.log("Error! ID is not unique. Returning error...")
             return res.send(
                 api_responses.generate_api_error(409, "ID is not unique.")
             )
