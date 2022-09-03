@@ -23,7 +23,7 @@ class ErrorReturnedFromAPI(Exception):
 
 #Client definition
 class Client:
-    def __init__(self, access_token, api_domain="estetare-api.albins.website", use_https=True):
+    def __init__(self, access_token, api_domain="estetik-api.albins.website", use_https=True):
         self.access_token = access_token
         self.api_domain = api_domain
         self.use_https = use_https

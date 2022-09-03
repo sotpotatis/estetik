@@ -46,14 +46,14 @@
     }
 </script>
 <svelte:head>
-    <title>{media_type} - estetare.albins.website</title>
+    <title>{media_type} - estetik.albins.website</title>
 </svelte:head>
 <body class="bg-gray-200 z-10 font-serif text-gray-400 scroll-smooth text-center min-h-screen flex flex-row place-content-center text-center">
 {#if structure}
     <div>
         <!-- Part navigation -->
         <div class="text-sm flex flex-row text-center gap-x-5">
-        <p>quickly navigate: {#each structure.parts as part}<a href="#{part.id}" class="hover:cursor-pointer hover:underline mr-5">{part.title}</a>{/each}</p>
+        <p>quickly navigate: {#each structure.parts as part}<a href="#{part.id}-segments" class="hover:cursor-pointer hover:underline mr-5">{part.title}</a>{/each}</p>
     </div>
             <!-- Test - Covering image -->
         <div id="covering-image" class="w-screen h-screen sticky top-0 z-0 flex flex-row place-content-center hidden" bind:this={covering_image_container} style="background-image: url('/static/artdisplay.png')">

@@ -23,7 +23,7 @@ class BasicCommands(commands.Cog):
             self.logger.info("SSL will be used for connections.")
         else:
             self.logger.warning("SSL has been disabled! Please use it in a production environment.")
-        self.estetare_client = Client(os.environ["ESTETIK_TOKEN"],
+        self.estetik_client = Client(os.environ["ESTETIK_TOKEN"],
                              api_domain=self.api_domain,
                              use_https=self.use_ssl)
         self.current_ctx = None
@@ -75,7 +75,7 @@ class BasicCommands(commands.Cog):
         self.logger.info("Image saved.")
         #Now, get other things as required
         #Part ID
-        defined_parts = self.estetare_client.get_segment_structure_for("images")["content"]["parts"]
+        defined_parts = self.estetik_client.get_segment_structure_for("images")["content"]["parts"]
         DEFINED_PART_IDS = [part["id"] if "id" in part else None for part in defined_parts] #Get which part IDs that have already been defined
         part_id_embed = Embed(
             title="What part/collection do you want to add this to?",
@@ -141,7 +141,7 @@ class BasicCommands(commands.Cog):
         confirmation_embed.add_field(name="Information", value=image_text_information, inline=False)
         confirmation_message = await ctx.send(embed=confirmation_embed)
         request_time = time.time()
-        self.estetare_client.create_new_image_item(
+        self.estetik_client.create_new_image_item(
             image_path=sent_image_path, image_title=image_title, image_description=image_description, image_id=image_id, belongs_to_part_id=belongs_to_part_id
         )
         self.logger.info("Image created.")
@@ -223,7 +223,7 @@ class BasicCommands(commands.Cog):
         confirmation_message = await ctx.send(embed=confirmation_embed)
         request_time = time.time()
         self.logger.info("Sending request to create new part...")
-        self.estetare_client.create_new_part(media_type_to_create_part_in=where_to_create_part,
+        self.estetik_client.create_new_part(media_type_to_create_part_in=where_to_create_part,
                                              part_id=part_id,
                                              part_title=title,
                                              part_description=description,
