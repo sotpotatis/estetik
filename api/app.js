@@ -48,6 +48,7 @@ app.use(cors())
 // Specify CORP policy so other websites can embed images
 app.use((req, res,next)=>{
     res.setHeader("Cross-Origin-Resource-Policy", "cross-origin")
+    next() // Call next function
 })
 // Define routes
 app.get("/", (req, res) => {
